@@ -6,15 +6,26 @@ class MainWindow (QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         MainWidget = QWidget()
-        HLayout = QHBoxLayout()
-        MainWidget.setLayout(HLayout)
+        Layout = QFormLayout()
+        MainWidget.setLayout(Layout)
         self.setCentralWidget(MainWidget)
         
-        self.textLabel1 = QLabel("Hello")
-        self.pushButton = QPushButton()
-        self.pushButton.setText("Click me! ")
-        HLayout.addWidget(self.textLabel1)
-        HLayout.addWidget(self.pushButton)
+        r1 = QRadioButton("Male")
+        r2 = QRadioButton("Female")
+        
+        Hbox = QHBoxLayout()
+        Hbox.addWidget(r1)
+        Hbox.addWidget(r2)
+        
+        Layout.addRow(QLabel("Gender: "), Hbox)
+        Layout.addRow(QPushButton("Submit"), QPushButton("Cancel"))
+        
+        #self.textLabel1 = QLabel("Hello")
+        #self.pushButton = QPushButton()
+        #self.pushButton.setText("Click me! ")
+        #Layout.addRow(self.textLabel1,self.pushButton)
+        
+       
         
 if __name__=='__main__':
     app = QApplication(sys.argv)
