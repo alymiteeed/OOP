@@ -1,6 +1,6 @@
 import threading
-import time
-
+import time                                                                    note: * packing operator
+ 
 def print_name(name, *args):
     print (name, *args)
 
